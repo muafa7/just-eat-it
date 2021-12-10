@@ -1,0 +1,555 @@
+$main-color : #FC5404;
+$accent-color : #192a56;
+$--box-shadow : 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    color: #424242;
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background-color: $accent-color;
+    color: #fff;
+    padding: 8px;
+    z-index: 100;
+
+    &:focus {
+        top: 0;
+     }
+ }
+
+.header{
+	position: fixed;
+    min-height: 4rem;
+    transition: min-height 0.3s;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+    background-color: #fff;
+    background: #fff;
+    padding:1rem 3%;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    z-index: 99;
+    box-shadow: $--box-shadow;
+
+    &__title{
+        display: flex;
+        align-items: center;
+        color: $accent-color;
+        min-width: 1rem;
+        min-height: 1rem;
+        background-color: #fff;
+        font-size: 1.5rem;
+        font-weight: 900;
+    }
+
+    &__menu{
+        min-width: 1rem;
+        min-height: 1rem;
+        background-color: transparent;
+        border: none;
+        color: $accent-color;
+        border-radius: .5rem;
+        padding:.5rem 1.5rem;
+        cursor: pointer;
+        font-size: 1.5rem;
+        margin-bottom: 0;
+        display: block;
+    }
+
+    &__menu:hover,
+    &__menu:focus{
+        color:#fff;
+        background: $accent-color;
+    }
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__list{
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__item{
+        text-align: center;
+    }
+
+    & a {
+        color: $accent-color;
+        border-radius: .5rem;
+        padding:1rem 1.5rem;
+        font-weight: 700;
+        font-size: 1rem;
+        text-decoration: none !important;
+        margin-left: 1rem;
+    }
+
+    & a:hover,
+      a:focus{
+        color:#fff;
+        background: $accent-color;
+    }
+
+    & li{
+        border-bottom: #fff;
+    }
+
+    & li::marker{
+        content: "";
+    }
+}
+
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 380px;
+    width: 100%;
+    text-align: center;
+    background-color: $accent-color;
+
+    &::after{
+        content: "";
+        position: absolute;
+        background: black;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0.3;
+    }
+
+    &__container{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+    }
+
+    &__image{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &__inner {
+        z-index: 4;
+        margin: 0 auto;
+        max-width: 800px;
+    }
+
+    &__tagline {
+        color: #fff;
+        font-weight: 900;
+        font-size: 36px;
+    }
+}
+
+#maincontent{
+    width: 100vw;
+    min-height: 120vh;
+    margin: 0;
+}
+
+
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid $accent-color;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+.content{
+    position: relative;
+    min-height: 12vh;
+    padding-top: 2rem;
+    text-align: center;
+    background-color: #eee;
+    background:#eee;
+
+    &__label{
+        text-transform: uppercase;
+        font-size: 32px;
+        color: $accent-color;
+        font-weight: 900;
+    }
+}
+
+.list{
+    width: 100%;
+    margin: 32px auto auto;
+    text-align: left;
+}
+.restaurants{
+    width: 100%;
+    padding: 16px;
+
+    &__item{
+        display: block;
+        margin: 1rem auto;
+        box-shadow: $--box-shadow;
+        width: 100%;
+        background-color: #fff;
+        background:#fff;
+        border-radius: .5rem;
+        overflow: hidden;
+    }
+
+    &__image{
+        margin-top: .5rem;
+        height: 17rem;
+        width: 100%;
+        padding:.5rem;
+        overflow: hidden;
+        position: relative;
+        
+        & img{
+            height: auto;
+            width: 100%;
+            border-radius: .5rem;
+            object-fit: cover;
+        }
+    }
+
+    &__content{
+        padding: 1rem;
+        min-width: 3rem;
+        min-height: 3.5rem;
+        background-color: #fff;
+
+
+        & a{
+            padding-top: 1rem;
+            padding-bottom: .5rem;
+            color: $accent-color;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        & h4{
+            color: $accent-color;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        & p{
+            color: $accent-color;
+            font-size: 14px;
+        }
+
+        & a{
+            color: $accent-color;
+            text-decoration: none;
+        }
+
+        & span{
+            color: $main-color;
+            font-weight: 700;
+        }
+    }
+}
+
+.container-favorite{
+    width: 100%;
+    margin-top: 4rem;
+}
+.container{
+    text-align: left;
+    max-width: 800px;
+    border-radius: .5rem;
+    display: grid;
+    gap: .5rem;
+    grid-template-columns: 1fr;
+    margin: 6rem auto;
+    box-shadow: $--box-shadow;
+    color: $accent-color;
+}
+.detail{
+    padding: .5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+
+    & h1 {
+        text-align: center;
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+
+    & h2 {
+        font-size: 1rem;
+    }
+
+    & img{
+        width: 100%;
+        border-radius: .5rem;
+    }
+    &__restaurant{
+        display: grid;
+        gap: .5rem;
+            & span{
+                color: $main-color;
+            }
+        }
+    &__menu{
+        display: grid;
+        gap: .5rem;
+
+        & li{
+            font-size: .75rem;
+        }
+        & li::marker{
+            content: "";
+        }
+    }
+}
+
+.review{
+    padding: .5rem;
+    display: grid;
+    gap: .5rem;
+
+    &__list{
+    max-width: 100%;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    }
+
+    &__container{
+        display: grid;
+        gap: .25rem;
+        text-align: left;
+        box-shadow: $--box-shadow;
+        max-width: 200px;
+        padding: 1rem;
+    }
+}
+
+.like{
+    font-size: 1.8rem;
+    position: fixed;
+    left: 1.6rem;
+    background-color: $accent-color;
+    bottom: 1.6rem;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 3.5rem;
+    height: 3.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+}
+
+.form{
+    padding: .5rem;
+    padding-bottom: .5rem;
+    border-radius: .5rem;
+
+    &__body{
+        display: grid;
+        gap: .25rem;
+    }
+
+    &__input{
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        border: 1px solid $accent-color;
+        border-radius: .5rem;
+        outline-color: $accent-color;
+    }
+}
+
+#submitReview{
+    margin-top: .5rem;
+    padding: 1rem 2rem;
+    width: initial;
+    background-color: $accent-color;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+#submitReview:hover{
+    background-color: #fff;
+    color: $accent-color;
+    border: 1px solid $accent-color;
+}
+
+
+footer {
+    background-color: #fff;
+    color: $accent-color;
+    font-weight: 700;
+    padding: 2em;
+    min-height: 2rem;
+    width: 100%;
+    text-align: center;
+}
+.restaurants{
+    display: grid;
+    grid-row-gap: 16px;
+}
+
+@media screen and (max-width: 499px){
+    .restaurants__image{
+        height: 14rem;
+    }
+}
+@media screen and (max-width: 499px) {
+    .nav {
+        position: absolute;
+
+        top:100%; left:0; right:0;
+        background:#fff;
+        border-top: .1rem solid rgba(0,0,0,.2);
+        border-bottom: .1rem solid rgba(0,0,0,.2);
+        padding:1rem;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        
+        &__list{
+            width: 300px;
+        }
+
+        &__item{
+            box-sizing: border-box;
+            display: inline-block;
+            width: 24%;
+            text-align: center;
+        }
+        & a{
+            padding: 1rem;
+            margin-left: .5rem;
+            font-size: .75rem;
+        }
+    }
+
+    .open {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    .nav__item {
+        display: list-item;
+        border-bottom: 1px solid #E0E0E0;
+        width: 100%;
+        text-align: left;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .header__menu {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .restaurants__content{
+        padding: 16px 32px 32px 32px;
+        & h3{
+            font-size: 22px;
+        }
+
+        & h4,
+        & span{
+            font-size: 18px;
+        }
+
+        & p {
+            font-size: 16px;
+        }
+    }
+
+}
+
+@media screen and (min-width: 700px) {
+    .restaurants{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 16px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+
+    .restaurants{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .container{
+        & h1{
+            font-size: 1.75rem;
+        }
+        
+        & h2{
+            font-size: 1.5rem;
+        }
+        
+        & h3{
+            font-size: 1.25rem;
+        }
+        
+        & h4{
+            font-size: 1rem;
+        }
+        
+        & p{
+            font-size: .85rem;
+        }
+
+        & li{
+            font-size: .85rem;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    hero {
+        min-width: 1000px;
+    }
+}
